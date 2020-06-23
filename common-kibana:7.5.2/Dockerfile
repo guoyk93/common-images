@@ -1,4 +1,4 @@
-FROM common-ubuntu:20.04
+FROM guoyk/common-ubuntu:20.04
 
 RUN curl -sSLo kibana.tar.gz https://artifacts.elastic.co/downloads/kibana/kibana-7.5.2-linux-x86_64.tar.gz && \
     mkdir -p /opt/kibana && \
