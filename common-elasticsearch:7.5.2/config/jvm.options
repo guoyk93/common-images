@@ -1,0 +1,20 @@
+-Xss1m
+-Xms{{ .Env.JAVA_XMS }}
+-Xmx{{ .Env.JAVA_XMX }}
+
+-javaagent:/opt/elasticsearch-tune-1.0.jar
+
+-XX:+UseG1GC
+-XX:MaxGCPauseMillis=200
+-XX:+AlwaysPreTouch
+-XX:-OmitStackTraceInFastThrow
+
+-Djava.awt.headless=true
+-Dfile.encoding=UTF-8
+-Djna.nosys=true
+-Dio.netty.noUnsafe=true
+-Dio.netty.noKeySetOptimization=true
+-Dio.netty.recycler.maxCapacityPerThread=0
+-Dlog4j.shutdownHookEnabled=false
+-Dlog4j2.disable.jmx=true
+-Djava.io.tmpdir=/tmp
