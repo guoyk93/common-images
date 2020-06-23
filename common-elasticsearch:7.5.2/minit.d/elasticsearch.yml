@@ -6,11 +6,10 @@ files:
 ---
 name: init-config-analysis-ik
 kind: once
-dir: /opt/elasticsearch/config
 command:
   - dir-init-if-needed
-  - analysis-ik.origin
-  - analysis-ik
+  - /opt/elasticsearch/config/analysis-ik.origin
+  - /data/config/analysis-ik
 ---
 name: ensure-logs-dir
 kind: once

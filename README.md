@@ -30,9 +30,8 @@
   + 基于 `guoyk/common-jdk:11` 
   + 安装在 `/opt/elasticsearch` 
   + 使用秘制 Java Agent 破解掉了 ES 的弱智限制, 现在跑在 `root` 用户下, 不用担心什么狗屁 `1000:1000` 用户目录权限问题
-  + 安装了 `analysis-ik` , 配置文件目录 `/opt/elasticsearch/config/analysis-ik` 做了空目录自动初始化, 因此可以挂载卷
-  + 数据目录 `/data` 
-  + 日志目录 `/data/logs` 
+  + 数据目录 `/data`，日志目录 `/data/logs`
+  + 安装了插件 `analysis-ik` , 配置文件目录 `/opt/elasticsearch/config/analysis-ik` 软链到了 `/data/config/analysis-ik` 并配置了空目录自动初始化
   + 环境变量
     - `JAVA_XMS` 
     - `JAVA_XMX` 

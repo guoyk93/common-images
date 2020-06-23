@@ -10,7 +10,8 @@ RUN curl -sSLo elasticsearch.tar.gz https://artifacts.elastic.co/downloads/elast
     rm -f elasticsearch.tar.gz && \
     curl -sSLo /opt/elasticsearch-tune-1.0.jar https://github.com/guoyk93/elasticsearch-tune/releases/download/v1.0/elasticsearch-tune-1.0.jar && \
     /opt/elasticsearch/bin/elasticsearch-plugin install -b https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.5.2/elasticsearch-analysis-ik-7.5.2.zip && \
-    mv /opt/elasticsearch/config/analysis-ik /opt/elasticsearch/config/analysis-ik.origin
+    mv /opt/elasticsearch/config/analysis-ik /opt/elasticsearch/config/analysis-ik.origin && \
+    ln -sf /data/config/analysis-ik /opt/elasticsearch/config/analysis-ik
 
 WORKDIR /opt/elasticsearch
 
