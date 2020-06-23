@@ -1,0 +1,5 @@
+{{- range $key, $val := .Env -}}
+{{- if stringsHasPrefix $key "KIBANA_" -}}
+{{ stringsReplaceAll (stringsToLower (stringsTrimPrefix $key "KIBANA_")) "_" "." }}: {{$val}}
+{{ end -}}
+{{- end -}}

@@ -30,7 +30,7 @@
   + 基于 `guoyk/common-jdk:11` 
   + 安装在 `/opt/elasticsearch` 
   + 使用秘制 Java Agent 破解掉了 ES 的弱智限制, 现在跑在 `root` 用户下, 不用担心什么狗屁 `1000:1000` 用户目录权限问题
-  + 数据目录 `/data`，日志目录 `/data/logs`
+  + 数据目录 `/data` ，日志目录 `/data/logs` 
   + 安装了插件 `analysis-ik` , 配置文件目录 `/opt/elasticsearch/config/analysis-ik` 软链到了 `/data/config/analysis-ik` 并配置了空目录自动初始化
   + 环境变量
     - `JAVA_XMS` 
@@ -39,6 +39,13 @@
     - 任何以 `ES_` 开头, 格式为 `ES_AAAA_BBBB` 的环境变量, 都会以 `aaaa.bbbb` 为键值写入 `config/elasticsearch.yml` 
 
       比如 `ES_DISCOVERY_TYPE=single-node` 会在 `config/elasticsearch.yml` 配置文件内写入 `discovery.type: single-node` 
+
+* `guoyk/common-kibana:7.5.2` 
+    - 基于 `guoyk/common-ubuntu:20.04` 
+    - 持久化目录 `/data`
+    - 安装在 `/opt/kibana` 
+    - 环境变量
+        - 任何以 `KIBANA_` 开头, 格式为 `KIBANA_AAAA_BBBB` 的环境变量, 都会以 `aaaa.bbbb` 为键值写入 `config/kibana.yml` 
 
 ## Credits
 

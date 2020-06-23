@@ -1,0 +1,10 @@
+name: render-kibana-yml
+kind: render
+files:
+    - /opt/kibana/config/kibana.yml
+---
+name: kibana
+kind: daemon
+dir: /opt/kibana
+command:
+    - ./bin/kibana
