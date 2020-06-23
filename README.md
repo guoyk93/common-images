@@ -7,7 +7,9 @@
 * `guoyk/common-ubuntu:20.04` 
   + 添加了常用软件
   + 切换到中文和东八区
-  + 添加了脚本 `/opt/bin/apt-switch-aliyun-mirror` 切换 APT 源到阿里云镜像
+  + 脚本
+    - `/opt/bin/apt-switch-aliyun-mirror` 切换 APT 源到阿里云镜像
+    - `/opt/bin/dir-init-if-needed` 使用 `.initialized` 文件作为标记，以一个文件夹的内容初始化另一个文件夹，常用于容器配置目录挂载
   + 使用 `minit` 作为主进程
 
 * `guoyk/common-jdk:11` 
