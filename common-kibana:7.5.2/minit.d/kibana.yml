@@ -8,3 +8,4 @@ kind: daemon
 dir: /opt/kibana
 command:
     - ./bin/kibana
+    - --alow-root
