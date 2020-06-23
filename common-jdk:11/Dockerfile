@@ -11,9 +11,10 @@ RUN curl -sSLo openjdk.tar.gz 'https://github.com/AdoptOpenJDK/openjdk11-binarie
 ENV JRE_HOME  /opt/jdk
 ENV JDK_HOME  /opt/jdk
 ENV JAVA_HOME /opt/jdk
-ENV PATH "/opt/jdk/bin:${PATH}"
+ENV PATH "${JAVA_HOME}/bin:${PATH}"
 
-ADD scripts /opt/scripts
 ENV JAVA_XMS "128m"
 ENV JAVA_XMX "1500m"
 ENV JAVA_OPTS "-server -Djava.security.egd=file:/dev/./urandom -XX:+UseG1GC -XX:MaxGCPauseMillis=200"
+
+ADD scripts /opt/bin

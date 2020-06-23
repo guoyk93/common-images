@@ -2,10 +2,13 @@ FROM guoyk/minit:1.1.1 AS minit
 
 FROM ubuntu:20.04
 
-COPY --from=minit /minit /minit
+COPY --from=minit /minit /opt/bin/minit
 
+ENV PATH "/opt/bin:${PATH}"
 ENV LANG=zh_CN.UTF-8
 ENV TZ=Asia/Shanghai
+
+CMD ["/opt/bin/minit"]
 
 RUN apt-get update && \
         apt-get install -y language-pack-zh-hans && \
@@ -14,7 +17,4 @@ RUN apt-get update && \
         rm -rf /var/lib/apt/lists/* && \
         ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-CMD ["/minit"]
-
-ADD scripts /opt/scripts
-ENV PATH "/opt/scripts:${PATH}"
+ADD scripts /opt/bin
