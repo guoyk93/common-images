@@ -4,12 +4,15 @@ set -eu
 
 cd $(dirname $0)
 
-for REPO in common-*; do
-    cd $REPO
-    for TAG in *; do
+REPOS=(
+    common-ubuntu \
+    common-jdk
+)
+
+for REPO in $REPOS; do
+    for TAG in $REPO/*; do
         echo $REPO:$TAG
-        docker build -t guoyk/$REPO:$TAG $TAG
+        docker build -t guoyk/$REPO:$TAG $REPO/$TAG
         docker push guoyk/$REPO:$TAG
     done
-    cd ..
 done
