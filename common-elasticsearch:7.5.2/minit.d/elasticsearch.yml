@@ -1,15 +1,23 @@
+name: render-config
+kind: render
+files:
+  - /opt/elasticsearch/config/jvm.options
+  - /opt/elasticsearch/config/elasticsearch.yml
+---
+name: init-config-analysis-ik
+kind: once
+dir: /opt/elasticsearch/config
+command:
+  - dir-init-if-needed
+  - analysis-ik.origin
+  - analysis-ik
+---
 name: ensure-logs-dir
 kind: once
 command:
   - mkdir
   - -p
   - /data/logs
----
-name: render-config
-kind: render
-files:
-  - /opt/elasticsearch/config/jvm.options
-  - /opt/elasticsearch/config/elasticsearch.yml
 ---
 name: elasticsearch
 kind: daemon
