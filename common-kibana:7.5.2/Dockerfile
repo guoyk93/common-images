@@ -5,6 +5,8 @@ RUN curl -sSLo kibana.tar.gz https://artifacts.elastic.co/downloads/kibana/kiban
     tar xf kibana.tar.gz -C /opt/kibana --strip-components 1 && \
     rm -rf kibana.tar.gz
 
+WORKDIR /opt/kibana
+
 ADD minit.d /etc/minit.d
 
 ENV KIBANA_ELASTICSEARCH_HOSTS '["http://elasticsearch:9200"]'
