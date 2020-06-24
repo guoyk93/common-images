@@ -7,6 +7,5 @@ cd $(dirname $0)
 source ./manifest.sh
 
 for REPO in ${REPOS[@]}; do
-    echo $REPO
-    docker build -t guoyk/$REPO $REPO
+    docker build -t guoyk/common-$REPO $REPO
 done
