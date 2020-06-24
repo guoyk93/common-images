@@ -70,7 +70,7 @@
 * `guoyk/common-kafka:2.4.1` 
   + 基于 `guoyk/common-jdk:11` 
   + 安装在 `/opt/kafka` 
-  + 持久化目录 `/data` 
+  + 持久化目录 `/data` , **注意** 挂载 PV 时，物理卷的 `lost+found` 文件夹会造成 `kafka` 启动失败，请使用子路径挂载
   + 配置文件 `/opt/kafka/config/server.properties` 使用 `minit` 渲染
   + 环境变量
 
