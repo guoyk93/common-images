@@ -5,8 +5,8 @@ FROM ubuntu:20.04
 COPY --from=minit /minit /opt/bin/minit
 
 ENV PATH "/opt/bin:${PATH}"
-ENV LANG=zh_CN.UTF-8
-ENV TZ=Asia/Shanghai
+ENV LANG zh_CN.UTF-8
+ENV TZ Asia/Shanghai
 
 CMD ["/opt/bin/minit"]
 
