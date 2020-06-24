@@ -4,9 +4,9 @@ export REPOS=(
     common-jdk:11
     common-elasticsearch:7.5.2
     common-kibana:7.5.2
+    common-filebeat:7.5.2
     # alpine series
     common-alpine:3.11
     common-nginx
     common-nginx:proxy
-    common-filebeat:7.5.2
 )
