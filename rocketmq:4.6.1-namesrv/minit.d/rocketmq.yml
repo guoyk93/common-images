@@ -1,3 +1,11 @@
+name: create-dirs
+kind: once
+command:
+  - mkdir
+  - -p
+  - /data/store
+  - /data/logs
+---
 name: mqnamesrv
 kind: daemon
 dir: /opt/rocketmq

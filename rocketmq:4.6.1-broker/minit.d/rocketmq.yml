@@ -8,8 +8,8 @@ kind: once
 command:
   - mkdir
   - -p
-  - $RMQCFG_storePathCommitLog
-  - $RMQCFG_storePathConsumerQueue
+  - /data/store
+  - /data/logs
 ---
 name: mqbroker
 kind: daemon
