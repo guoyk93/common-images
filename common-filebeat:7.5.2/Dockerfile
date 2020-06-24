@@ -1,4 +1,4 @@
-FROM guoyk/common-alpine:3.11
+FROM guoyk/common-ubuntu:20.04
 
 RUN curl -sSLo filebeat.tar.gz https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.5.2-linux-x86_64.tar.gz && \
     mkdir -p /opt/filebeat && \
