@@ -3,5 +3,6 @@
 set -eu
 
 export KAFKA_OPTS="-Xms${JAVA_XMS} -Xmx${JAVA_XMX} ${JAVA_OPTS}"
+export JMX_PORT=9999
 
 exec /opt/kafka/bin/kafka-server-start.sh "$@"
