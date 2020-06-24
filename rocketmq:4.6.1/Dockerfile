@@ -1,4 +1,4 @@
-FROM guoyk/common-jdk:11
+FROM guoyk/common-jdk:8
 
 RUN curl -sSLo rocketmq.tar.gz https://mirrors.landzero.net/archive.apache.org/dist/rocketmq/4.5.2/rocketmq-all-4.6.1-bin-release.tar.gz && \
     mkdir -p /opt/rocketmq && \
@@ -6,3 +6,5 @@ RUN curl -sSLo rocketmq.tar.gz https://mirrors.landzero.net/archive.apache.org/d
     rm -rf rocketmq.tar.gz
 
 WORKDIR /opt/rocketmq
+
+ENV ROCKETMQ_HOME /opt/rocketmq

@@ -21,9 +21,10 @@
     - `/opt/bin/dir-init-if-needed` 使用 `.initialized` 文件作为标记, 以一个文件夹的内容初始化另一个文件夹, 常用于容器配置目录挂载
   + 使用 `minit` 作为主进程
 
+* `guoyk/common-jdk:8` 
 * `guoyk/common-jdk:11` 
   + 基于 `guoyk/common-ubuntu:20.04` 
-  + 使用 `AdoptOpenJDK 11 (HotSpot)` , 安装在 `/opt/jdk` 
+  + 使用 `AdoptOpenJDK 8/11 (HotSpot)` , 安装在 `/opt/jdk` 
   + 添加了脚本 `/opt/bin/java-wrapper` , 可以替代 `java` 命令, 接受 `JAVA_XMS` , `JAVA_XMX` 和 `JAVA_OPTS` 环境变量
 
 * `guoyk/common-elasticsearch:7.5.2` 
@@ -39,6 +40,18 @@
     - 任何以 `ESCFG_` 开头, 格式为 `ESCFG_hello__world` 的环境变量, 都会以 `hello.world` 为键写入 `config/elasticsearch.yml` 
 
       比如 `ESCFG_discovery__type=single-node` 会在 `config/elasticsearch.yml` 配置文件内写入 `discovery.type: single-node` 
+
+* `guoyk/common-rocketmq:4.6.1` 
+* `guoyk/common-rocketmq:4.6.1-namesrv` 
+* `guoyk/common-rocketmq:4.6.1-broker` 
+  + 基于 `guoyk/common-jdk:8` 
+  + 安装在 `/opt/rocketmq` 
+  + 数据目录 `/data` 
+  + 环境变量
+    - `JAVA_XMS` 
+    - `JAVA_XMX` 
+    - `JAVA_OPTS` 
+    - 针对 `broker` , 任何以 `RMQCFG_` 开头, 格式为 `RMQCFG_hello__world` 的环境变量, 都会以 `hello.world` 为键写入 `conf/broker.conf` 
 
 * `guoyk/common-kibana:7.5.2` 
   + 基于 `guoyk/common-ubuntu:20.04` 
