@@ -1,6 +1,7 @@
 export REPOS=(
     # ubuntu series
     ubuntu:20.04
+    jdk:8
     jdk:11
     elasticsearch:7.5.2
     kibana:7.5.2
