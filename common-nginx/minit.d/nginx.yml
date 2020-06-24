@@ -10,6 +10,7 @@ name: render-nginx-config
 kind: render
 files:
   - /etc/nginx/nginx.conf
+  - /etc/nginx/snippets/*.conf
   - /etc/nginx/conf.d/*.conf
   - /etc/nginx/default.conf.d/*.conf
   - /etc/nginx/default.root.conf.d/*.conf
