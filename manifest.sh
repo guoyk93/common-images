@@ -6,6 +6,7 @@ export REPOS=(
     common-kibana:7.5.2
     common-filebeat:7.5.2
     common-zookeeper:3.5.8
+    common-kafka:2.4.1
     # alpine series
     common-alpine:3.11
     common-nginx

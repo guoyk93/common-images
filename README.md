@@ -36,16 +36,17 @@
     - `JAVA_XMS` 
     - `JAVA_XMX` 
     - 注意 `JAVA_OPTS` 无效, 使用 `ES_JAVA_OPTS` 
-    - 任何以 `ESCFG_` 开头, 格式为 `ESCFG_hello__world` 的环境变量, 都会以 `hello.world` 为键值写入 `config/elasticsearch.yml` 
+    - 任何以 `ESCFG_` 开头, 格式为 `ESCFG_hello__world` 的环境变量, 都会以 `hello.world` 为键写入 `config/elasticsearch.yml` 
 
       比如 `ESCFG_discovery__type=single-node` 会在 `config/elasticsearch.yml` 配置文件内写入 `discovery.type: single-node` 
 
 * `guoyk/common-kibana:7.5.2` 
-    - 基于 `guoyk/common-ubuntu:20.04` 
-    - 持久化目录 `/data` 
-    - 安装在 `/opt/kibana` 
-    - 环境变量
-        - 任何以 `KIBANACFG_` 开头, 格式为 `KIBANACFG_hello__world` 的环境变量, 都会以 `hello.world` 为键值写入 `config/kibana.yml` 
+  + 基于 `guoyk/common-ubuntu:20.04` 
+  + 持久化目录 `/data` 
+  + 安装在 `/opt/kibana` 
+  + 环境变量
+
+    任何以 `KIBANACFG_` 开头, 格式为 `KIBANACFG_hello__world` 的环境变量, 都会以 `hello.world` 为键写入 `config/kibana.yml` 
 
 * `guoyk/common-filebeat:7.5.2` 
   + 基于 `guoyk/common-ubuntu:20.4` 
@@ -58,10 +59,24 @@
   + 安装在 `/opt/zookeeper` 
   + 持久化目录 `/data` 
   + 配置文件 `/opt/zookeeper/conf/zoo.cfg` 使用 `minit` 渲染
-  + 默认为单机模式，如果启用集群，请设置如下环境变量
+  + 环境变量
 
-      ZOO_MYID，当前机器的编号
-      ZOO_SERVER_X, X 号机的地址，建议使用 statefulSet + ClusterIP 模式部署，然后在这里填写工作负载名即可
+    任何以 `ZOOCFG_` 开头, 格式为 `ZOOCFG_hello__world` 的环境变量，会以 `hello.world` 为键，写入 `zoo.cfg` 
+
+  + 默认为单机模式，如果启用集群，请设置如下环境变量
+    - `ZOO_MYID` ，当前机器的编号
+    - `ZOO_SERVER_X` , X 号机的地址，建议使用 `statefulSet + ClusterIP` 模式部署，然后在这里填写工作负载名即可
+
+* `guoyk/common-kafka:2.4.1` 
+  + 基于 `guoyk/common-jdk:11` 
+  + 安装在 `/opt/kafka` 
+  + 持久化目录 `/data` 
+  + 配置文件 `/opt/kafka/config/server.properties` 使用 `minit` 渲染
+  + 环境变量
+
+    任何以 `KAFKACFG_` 开头, 格式为 `KAFKACFG_hello__world` 的环境变量，会以 `hello.world` 为键，写入 `zoo.cfg` 
+
+    比如 `KAFKACFG_zookeeper__connect=localhost:2181` 会在配置文件里面写入 `zookeeper.connect=localhost:2181` 
 
 * `guoyk/common-alpine:3.11` 
   + 添加了常用软件
