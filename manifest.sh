@@ -8,6 +8,7 @@ export REPOS=(
     filebeat:7.5.2
     zookeeper:3.5.8
     kafka:2.4.1
+    rocketmq:4.6.1
     # alpine series
     alpine:3.11
     nginx
