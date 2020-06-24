@@ -9,6 +9,8 @@ export REPOS=(
     zookeeper:3.5.8
     kafka:2.4.1
     rocketmq:4.6.1
+    rocketmq:4.6.1-namesrv
+    rocketmq:4.6.1-broker
     # alpine series
     alpine:3.11
     nginx
