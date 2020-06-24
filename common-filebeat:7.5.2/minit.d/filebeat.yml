@@ -1,0 +1,6 @@
+name: filebeat
+kind: daemon
+dir: /opt/filebeat
+command:
+  - ./filebeat
+  - -e

@@ -8,4 +8,5 @@ export REPOS=(
     common-alpine:3.11
     common-nginx
     common-nginx:proxy
+    common-filebeat:7.5.2
 )
