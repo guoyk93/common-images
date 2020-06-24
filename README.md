@@ -35,17 +35,17 @@
   + 环境变量
     - `JAVA_XMS` 
     - `JAVA_XMX` 
-    - 注意 `JAVA_OPTS` 无效
-    - 任何以 `ES_` 开头, 格式为 `ES_AAAA_BBBB` 的环境变量, 都会以 `aaaa.bbbb` 为键值写入 `config/elasticsearch.yml` 
+    - 注意 `JAVA_OPTS` 无效, 使用 `ES_JAVA_OPTS` 
+    - 任何以 `ESCFG_` 开头, 格式为 `ESCFG_hello__world` 的环境变量, 都会以 `hello.world` 为键值写入 `config/elasticsearch.yml` 
 
-      比如 `ES_DISCOVERY_TYPE=single-node` 会在 `config/elasticsearch.yml` 配置文件内写入 `discovery.type: single-node` 
+      比如 `ESCFG_discovery__type=single-node` 会在 `config/elasticsearch.yml` 配置文件内写入 `discovery.type: single-node` 
 
 * `guoyk/common-kibana:7.5.2` 
     - 基于 `guoyk/common-ubuntu:20.04` 
-    - 持久化目录 `/data`
+    - 持久化目录 `/data` 
     - 安装在 `/opt/kibana` 
     - 环境变量
-        - 任何以 `KIBANA_` 开头, 格式为 `KIBANA_AAAA_BBBB` 的环境变量, 都会以 `aaaa.bbbb` 为键值写入 `config/kibana.yml` 
+        - 任何以 `KIBANACFG_` 开头, 格式为 `KIBANACFG_hello__world` 的环境变量, 都会以 `hello.world` 为键值写入 `config/kibana.yml` 
 
 ## Credits
 

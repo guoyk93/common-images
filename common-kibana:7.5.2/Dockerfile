@@ -10,7 +10,7 @@ WORKDIR /opt/kibana
 ADD config config
 ADD minit.d /etc/minit.d
 
-ENV KIBANA_ELASTICSEARCH_HOSTS '["http://elasticsearch:9200"]'
-ENV KIBANA_SERVER_HOST 0.0.0.0
-ENV KIBANA_PATH_DATA /data
-ENV KIBANA_I18N_LOCALE zh-CN
+ENV KIBANACFG_elasticsearch__hosts '["http://elasticsearch:9200"]'
+ENV KIBANACFG_server__host 0.0.0.0
+ENV KIBANACFG_path__data /data
+ENV KIBANACFG_i18n__locale zh-CN

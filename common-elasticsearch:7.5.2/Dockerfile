@@ -18,8 +18,8 @@ WORKDIR /opt/elasticsearch
 ADD config config
 ADD minit.d /etc/minit.d
 
-ENV ES_PATH_DATA '/data'
-ENV ES_PATH_LOGS '/data/logs'
-ENV ES_NETWORK_HOST '0.0.0.0'
-ENV ES_HTTP_PORT 9200
-ENV ES_DISCOVERY_TYPE 'single-node'
+ENV ESCFG_path__data /data
+ENV ESCFG_path__logs /data/logs
+ENV ESCFG_network__host 0.0.0.0
+ENV ESCFG_http__port 9200
+ENV ESCFG_discovery__type single-node

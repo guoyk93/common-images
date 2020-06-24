@@ -1,5 +1,5 @@
 {{- range $key, $val := .Env -}}
-{{- if stringsHasPrefix $key "ES_" -}}
-{{ stringsReplaceAll (stringsToLower (stringsTrimPrefix $key "ES_")) "_" "." }}: {{$val}}
+{{- if stringsHasPrefix $key "ESCFG_" -}}
+{{ stringsReplaceAll (stringsTrimPrefix $key "ESCFG_") "__" "." }}: {{$val}}
 {{ end -}}
 {{- end -}}
