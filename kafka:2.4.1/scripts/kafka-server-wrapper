@@ -4,4 +4,4 @@ set -eu
 
 export KAFKA_OPTS="-Xms${JAVA_XMS} -Xmx${JAVA_XMX} ${JAVA_OPTS}"
 
-exec /opt/kafka/bin/kafka-server-starter.sh "$@"
+exec /opt/kafka/bin/kafka-server-start.sh "$@"
