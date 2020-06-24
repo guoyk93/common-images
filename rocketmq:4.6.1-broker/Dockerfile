@@ -10,3 +10,5 @@ ENV RMQCFG_deleteWhen 04
 ENV RMQCFG_fileReservedTime 48
 ENV RMQCFG_brokerRole ASYNC_MASTER
 ENV RMQCFG_flushDiskType ASYNC_FLUSH
+ENV RMQCFG_storePathCommitLog /data/commitlog
+ENV RMQCFG_storePathConsumerQueue /data/consumerqueue

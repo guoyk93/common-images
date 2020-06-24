@@ -3,6 +3,13 @@ kind: render
 files:
   - /opt/kafka/config/server.properties
 ---
+name: create-dirs
+kind: once
+command:
+  - mkdir
+  - -p
+  - $KAFKACFG_log__dirs
+---
 name: kafka
 kind: daemon
 dir: /opt/kafka

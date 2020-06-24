@@ -11,12 +11,13 @@ command:
   - /opt/elasticsearch/config/analysis-ik.origin
   - /data/config/analysis-ik
 ---
-name: ensure-logs-dir
+name: create-dirs
 kind: once
 command:
   - mkdir
   - -p
-  - /data/logs
+  - $ESCFG_path__data
+  - $ESCFG_path__logs
 ---
 name: elasticsearch
 kind: daemon

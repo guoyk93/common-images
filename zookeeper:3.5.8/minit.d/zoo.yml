@@ -6,10 +6,9 @@ files:
 name: create-zookeeper-myid
 kind: once
 shell: bash
-dir: /
 command:
-    - mkdir -p data
-    - echo $ZOO_MYID > data/myid
+    - mkdir -p $ZOOCFG_dataDir
+    - echo $ZOO_MYID > $ZOOCFG_dataDir/myid
 ---
 name: zookeeper
 kind: daemon

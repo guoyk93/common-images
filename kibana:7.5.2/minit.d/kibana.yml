@@ -3,6 +3,13 @@ kind: render
 files:
     - /opt/kibana/config/kibana.yml
 ---
+name: create-dirs
+kind: once
+command:
+    - mkdir
+    - -p
+    - $KIBANACFG_path__data
+---
 name: kibana
 kind: daemon
 dir: /opt/kibana

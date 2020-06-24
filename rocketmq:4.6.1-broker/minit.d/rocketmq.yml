@@ -3,6 +3,14 @@ kind: render
 files:
   - /opt/rocketmq/conf/broker.conf
 ---
+name: create-dirs
+kind: once
+command:
+  - mkdir
+  - -p
+  - $RMQCFG_storePathCommitLog
+  - $RMQCFG_storePathConsumerQueue
+---
 name: mqbroker
 kind: daemon
 dir: /opt/rocketmq
