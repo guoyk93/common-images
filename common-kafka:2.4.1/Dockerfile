@@ -1,4 +1,4 @@
-FROM guoyk/jdk:11
+FROM guoyk/common-jdk:11
 
 RUN curl -sSLo kafka.tar.gz https://downloads.apache.org/kafka/2.4.1/kafka_2.12-2.4.1.tgz && \
     mkdir -p /opt/kafka && \
