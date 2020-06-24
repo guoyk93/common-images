@@ -47,6 +47,24 @@
     - 环境变量
         - 任何以 `KIBANACFG_` 开头, 格式为 `KIBANACFG_hello__world` 的环境变量, 都会以 `hello.world` 为键值写入 `config/kibana.yml` 
 
+* `guoyk/common-alpine:3.11` 
+  + 添加了常用软件
+  + 切换到中文和东八区
+  + 脚本
+    - `/opt/bin/apk-switch-aliyun-mirror` 切换 APK 源到阿里云镜像
+    - `/opt/bin/dir-init-if-needed` 使用 `.initialized` 文件作为标记, 以一个文件夹的内容初始化另一个文件夹, 常用于容器配置目录挂载
+  + 使用 `minit` 作为主进程
+
+* `guoyk/common-nginx` 
+  + 基于 `guoyk/common-alpine:3.11` 
+  + 使用以下配置文件组合
+    - `/etc/nginx.conf` 
+      - `/etc/nginx/conf.d/default.conf` 
+        - `/etc/nginx/default.conf.d/*` 
+        - `/etc/nginx/default.root.conf.d/*` 
+  + 环境变量
+    - `NGINX_CORS_EXTRA_HEADERS` 如果引用了 `/etc/nginx/snippets/cors_params` 使用此环境变量扩充 CORS 头
+
 ## Credits
 
 Guo Y. K., MIT License

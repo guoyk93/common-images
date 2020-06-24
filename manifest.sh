@@ -6,4 +6,5 @@ export REPOS=(
     common-kibana:7.5.2
     # alpine series
     common-alpine:3.11
+    common-nginx
 )
