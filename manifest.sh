@@ -7,4 +7,5 @@ export REPOS=(
     # alpine series
     common-alpine:3.11
     common-nginx
+    common-nginx:proxy
 )

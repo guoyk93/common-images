@@ -65,6 +65,13 @@
   + 环境变量
     - `NGINX_CORS_EXTRA_HEADERS` 如果引用了 `/etc/nginx/snippets/cors_params` 使用此环境变量扩充 CORS 头
 
+* `guoyk/common-nginx:proxy`
+  + 基于 `guoyk/common-nginx`, 用于服务正向代理
+  + 环境变量
+    - `NGINX_PROXY_TARGET` 代理目标，比如 `http://example.com`
+    - `NGINX_PROXY_HOST` 代理主机名，比如 `another.example.com`，默认值 `-` 代表 `$proxy_host`
+    - `NGINX_PROXY_ENABLE_CORS` 是否启用 CORS, 设置为 `true` 即启用 CORS
+
 ## Credits
 
 Guo Y. K., MIT License
