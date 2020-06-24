@@ -8,8 +8,8 @@ RUN curl -sSLo kafka.tar.gz https://downloads.apache.org/kafka/2.4.1/kafka_2.12-
 WORKDIR /opt/kafka
 
 ADD config config
-ADD scripts /bin/scripts
 
+ADD scripts /opt/bin
 ADD minit.d /etc/minit.d
 
 ENV KAFKACFG_broker__id 0
