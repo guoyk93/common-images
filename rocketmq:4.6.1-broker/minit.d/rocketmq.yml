@@ -19,3 +19,5 @@ command:
   - -cp
   - .:conf:lib/*
   - org.apache.rocketmq.broker.BrokerStartup
+  - -c
+  - conf/broker.conf
