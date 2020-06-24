@@ -1,3 +1,11 @@
+name: create-data
+kind: once
+dir: /
+command:
+  - mkdir
+  - -p
+  - data
+---
 name: filebeat
 kind: daemon
 dir: /opt/filebeat

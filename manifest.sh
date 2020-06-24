@@ -5,6 +5,7 @@ export REPOS=(
     common-elasticsearch:7.5.2
     common-kibana:7.5.2
     common-filebeat:7.5.2
+    common-zookeeper:3.5.8
     # alpine series
     common-alpine:3.11
     common-nginx

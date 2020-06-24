@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -eu
+
+export SERVER_JVMFLAGS="-Xms${JAVA_XMS} -Xmx${JAVA_XMX} ${JAVA_OPTS}"
+
+exec /opt/zookeeper/bin/zkServer.sh "$@"

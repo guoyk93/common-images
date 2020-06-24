@@ -47,6 +47,22 @@
     - 环境变量
         - 任何以 `KIBANACFG_` 开头, 格式为 `KIBANACFG_hello__world` 的环境变量, 都会以 `hello.world` 为键值写入 `config/kibana.yml` 
 
+* `guoyk/common-filebeat:7.5.2` 
+  + 基于 `guoyk/common-ubuntu:20.4` 
+  + 安装在 `/opt/filebeat` 
+  + 持久化目录 `/data` 
+  + 配置文件 `/opt/filebeat/filebeat.yml` 建议使用 `confgMap` 映射文件
+
+* `guoyk/common-zookeeper:3.5.8` 
+  + 基于 `guoyk/common-jdk:11` 
+  + 安装在 `/opt/zookeeper` 
+  + 持久化目录 `/data` 
+  + 配置文件 `/opt/zookeeper/conf/zoo.cfg` 使用 `minit` 渲染
+  + 默认为单机模式，如果启用集群，请设置如下环境变量
+
+      ZOO_MYID，当前机器的编号
+      ZOO_SERVER_X, X 号机的地址，建议使用 statefulSet + ClusterIP 模式部署，然后在这里填写工作负载名即可
+
 * `guoyk/common-alpine:3.11` 
   + 添加了常用软件
   + 切换到中文和东八区
@@ -65,11 +81,11 @@
   + 环境变量
     - `NGINX_CORS_EXTRA_HEADERS` 如果引用了 `/etc/nginx/snippets/cors_params` 使用此环境变量扩充 CORS 头
 
-* `guoyk/common-nginx:proxy`
-  + 基于 `guoyk/common-nginx`, 用于服务正向代理
+* `guoyk/common-nginx:proxy` 
+  + 基于 `guoyk/common-nginx` , 用于服务正向代理
   + 环境变量
-    - `NGINX_PROXY_TARGET` 代理目标，比如 `http://example.com`
-    - `NGINX_PROXY_HOST` 代理主机名，比如 `another.example.com`，默认值 `-` 代表 `$proxy_host`
+    - `NGINX_PROXY_TARGET` 代理目标，比如 `http://example.com` 
+    - `NGINX_PROXY_HOST` 代理主机名，比如 `another.example.com` ，默认值 `-` 代表 `$proxy_host` 
     - `NGINX_PROXY_ENABLE_CORS` 是否启用 CORS, 设置为 `true` 即启用 CORS
 
 ## Credits
