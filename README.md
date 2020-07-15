@@ -113,7 +113,9 @@
   + 基于 `guoyk/common-nginx` , 用于服务正向代理
   + 环境变量
     - `NGINX_PROXY_TARGET` 代理目标，比如 `http://example.com` 
-    - `NGINX_PROXY_HOST` 代理主机名，比如 `another.example.com` ，默认值 `-` 代表 `$proxy_host` 
+    - `NGINX_PROXY_HOST` 代理主机名，比如 `another.example.com` ，默认值 `-` 代表 `$proxy_host`，可用 `@` 代表 `$host`
+    - `NGINX_PROXY_REAL_IP` 设置为 `on`，会自动发送 `X-Real-IP`
+    - `NGINX_PROXY_FORWARDED_FOR` 设置为 `on` 会自动发送 `X-Forwarded-For`
     - `NGINX_PROXY_ENABLE_CORS` 是否启用 CORS, 设置为 `true` 即启用 CORS
 
 ## Credits
