@@ -15,4 +15,5 @@ export REPOS=(
     alpine:3.11
     nginx
     nginx:proxy
+    nginx:proxy-basic-auth
 )

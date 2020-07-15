@@ -110,13 +110,19 @@
     - `NGINX_CORS_EXTRA_HEADERS` 如果引用了 `/etc/nginx/snippets/cors_params` 使用此环境变量扩充 CORS 头
 
 * `guoyk/common-nginx:proxy` 
-  + 基于 `guoyk/common-nginx` , 用于服务正向代理
+  + 基于 `guoyk/common-nginx` , 用于服务代理
   + 环境变量
     - `NGINX_PROXY_TARGET` 代理目标，比如 `http://example.com` 
     - `NGINX_PROXY_HOST` 代理主机名，比如 `another.example.com` ，默认值 `-` 代表 `$proxy_host`，可用 `@` 代表 `$host`
     - `NGINX_PROXY_REAL_IP` 设置为 `on`，会自动发送 `X-Real-IP`
     - `NGINX_PROXY_FORWARDED_FOR` 设置为 `on` 会自动发送 `X-Forwarded-For`
     - `NGINX_PROXY_ENABLE_CORS` 是否启用 CORS, 设置为 `true` 即启用 CORS
+
+* `guoyk/common-nginx:proxy-basic-auth`
+  + 基于 `guoyk/common-nginx:proxy`
+  + 环境变量
+      - `NGINX_BASIC_AUTH_USER`
+      - `NGINX_BASIC_AUTH_PASS`
 
 ## Credits
 
