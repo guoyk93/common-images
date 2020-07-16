@@ -11,7 +11,6 @@ export REPOS=(
     rocketmq:4.6.1
     rocketmq:4.6.1-namesrv
     rocketmq:4.6.1-broker
-    apollo:1.3.0
     # alpine series
     alpine:3.11
     nginx
