@@ -3,4 +3,4 @@ kind: once
 dir: /etc/nginx
 shell: sh
 command:
-    - echo $NGINX_BASIC_AUTH_PASS | htpasswd -c htpasswd -i $NGINX_BASIC_AUTH_USER
+    - echo $NGINX_BASIC_AUTH_PASS | htpasswd -ci htpasswd $NGINX_BASIC_AUTH_USER
