@@ -6,6 +6,7 @@ export REPOS=(
     elasticsearch:7.5.2
     kibana:7.5.2
     filebeat:7.5.2
+    filebeat:6.3.2
     zookeeper:3.5.8
     kafka:2.4.1
     rocketmq:4.6.1
